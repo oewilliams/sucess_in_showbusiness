@@ -20,7 +20,8 @@ def get_data(loc, cutoff, min_peak = 1):
 	for line in f:
 		if len(line) > 1:
 			dum_series = line[0:-1].split('\t')		#Ignore \n character.
-			strip_series = [int(x) for x in dum_series[0:-1] if x != '0']		#Convert to integers and strip zeros.
+			#Line below edited from first upload due to incorrect version.
+			strip_series = [int(x) for x in dum_series if x != '0']		#Convert to integers and strip zeros.
 			if (len(dum_series) > cutoff) and (max(strip_series) > min_peak):
 				dum_series = [int(x) for x in dum_series]
 				series.append(dum_series)
